@@ -18,7 +18,6 @@ class S3Context:
         self,
         aws_access_key_id: str,
         aws_secret_access_key: str,
-        aws_session_token: str,
         region_name: str,
         endpoint_url: str,
         bucket_name: str,
@@ -27,7 +26,6 @@ class S3Context:
     ):
         self.aws_access_key_id = aws_access_key_id
         self.aws_secret_access_key = aws_secret_access_key
-        self.aws_session_token = aws_session_token
         self.region_name = region_name
         self.endpoint_url = endpoint_url
         self.bucket_name = bucket_name
@@ -275,7 +273,6 @@ class S3Connector:
         self,
         aws_access_key_id: str,
         aws_secret_access_key: str,
-        aws_session_token: str,
         region_name: str,
         endpoint_url: str,
         bucket_name: str,
@@ -285,7 +282,6 @@ class S3Connector:
         # Store configuration parameters lazily, loading defaults from environment if needed
         self.aws_access_key_id = aws_access_key_id
         self.aws_secret_access_key = aws_secret_access_key
-        self.aws_session_token = aws_session_token
         self.region_name = region_name
         self.endpoint_url = endpoint_url
         self.bucket_name =  bucket_name
@@ -299,7 +295,6 @@ class S3Connector:
         return S3Context(
             aws_access_key_id=self.aws_access_key_id,
             aws_secret_access_key=self.aws_secret_access_key,
-            aws_session_token=self.aws_session_token,
             region_name=self.region_name,
             endpoint_url=self.endpoint_url,
             bucket_name=self.bucket_name,
@@ -307,10 +302,9 @@ class S3Connector:
             config=self.config,
         )
     
-def Connecor(
+def connect(
         aws_access_key_id: str,
         aws_secret_access_key: str,
-        aws_session_token: str,
         region_name: str,
         endpoint_url: str,
         bucket_name: str,
@@ -323,7 +317,6 @@ def Connecor(
     return S3Connector(
         aws_access_key_id=aws_access_key_id,
         aws_secret_access_key=aws_secret_access_key,
-        aws_session_token=aws_session_token,
         region_name=region_name,
         endpoint_url=endpoint_url,
         bucket_name=bucket_name,
