@@ -1,0 +1,5 @@
+.venv
+vault.kv
+src/**/__pycache__/**
+dist
+export-deployment-keys.sh
