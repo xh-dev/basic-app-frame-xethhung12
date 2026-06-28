@@ -1,4 +1,3 @@
-from warnings import deprecated
 import os
 import logging
 from typing import Optional, List, Dict, Any
@@ -307,10 +306,6 @@ class S3Connector:
             client_name=self.client_name,
             config=self.config,
         )
-    
-    @deprecated("Use get_connection() instead. This method will be removed in future versions.")
-    def get_context(self) -> S3Context:
-        return self.get_connection()
     
 def Connecor(
         aws_access_key_id: str,
