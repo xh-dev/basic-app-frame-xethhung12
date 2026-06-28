@@ -309,7 +309,7 @@ def connect(
         bucket_name: str,
         client_name: str = "s3",
         config: Optional[Config] = None,
-) -> S3Context:
+) -> S3Connector:
     """
     A convenience function to create an S3Context directly without needing to instantiate S3Connector.
     """
