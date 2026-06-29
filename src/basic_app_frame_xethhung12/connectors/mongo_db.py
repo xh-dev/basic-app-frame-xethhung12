@@ -7,25 +7,24 @@ from pymongo.server_api import ServerApi
 # uri = "mongodb+srv://<db_username>:<db_password>@c0.pbqmnnl.mongodb.net/?appName=C0"
 
 class Connector:
-    def __init__(self, connection_string: str):
+    def __init__(self, connection_string: str, api_version: int=1):
         self.connection_string = connection_string
+        self.api_version = api_version
     
-    def get_mongo_client(url: str, version:int="1"):
-        client = MongoClient(uri, server_api=ServerApi(version))
+    def get_mongo_client(self):
+        client = MongoClient(self.connection_string, server_api=ServerApi(self.api_version))
         try:
             client.admin.command('ping')
             return client
         except Exception as e:
             print(e)
-    def get_client(self):
-        return MongoClient(self.connection_string, server_api=ServerApi("1"))
     
 
     @staticmethod
     def _credential_with_connection_str(username: str, password: str, connection_str, un_placeholder:str="<db_un>", pwd_placeholder:str="<db_pwd>") -> str:
         safe_username = quote_plus(username)
         safe_password = quote_plus(password)
-        return connection_str.replace(un_placeholder, safe_username).replace(db_password, safe_password)
+        return connection_str.replace(un_placeholder, safe_username).replace(pwd_placeholder, safe_password)
     
     @staticmethod
     def credential_with_connection_str(username: str, password: str, connection_str, un_placeholder:str="<db_un>", pwd_placeholder:str="<db_pwd>") -> str:
