@@ -12,7 +12,7 @@ class Connector:
         self.api_version = api_version
     
     def get_mongo_client(self):
-        client = MongoClient(self.connection_string, server_api=ServerApi(self.api_version))
+        client = MongoClient(self.connection_string, server_api=ServerApi(f"{self.api_version}"))
         try:
             client.admin.command('ping')
             return client
