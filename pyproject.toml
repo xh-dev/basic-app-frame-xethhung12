@@ -4,14 +4,14 @@ build-backend = "hatchling.build"
 
 [project]
 name = "basic_app_frame_xethhung12"
-version = "0.0.11"
+version = "0.0.12"
 description = "A small package targeting to help on python project packaging process"
 readme = "README.md"
 requires-python = ">=3.11"
 classifiers = [ "Programming Language :: Python :: 3", "Operating System :: OS Independent",]
 license = "GPL-3.0-only"
 license-files = [ "LICEN[CS]E*",]
-dependencies = [ "j-vault-http-client-xethhung12 >= 0.1.1", "simple-crypt-xethhung12>=0.0.4", "pymongo[srv]", "mysql-connector-python", "rstream", "blessed", "dropbox", "xai-sdk", "fastapi",]
+dependencies = [ "j-vault-http-client-xethhung12 >= 0.1.1", "simple-crypt-xethhung12>=0.0.4", "pymongo[srv]", "mysql-connector-python", "rstream", "blessed", "dropbox", "xai-sdk", "fastapi", "starlette",]
 [[project.authors]]
 name = "Xeth Hung"
 email = "admin@xethh.me"

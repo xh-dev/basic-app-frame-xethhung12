@@ -7,3 +7,4 @@ blessed
 dropbox
 xai-sdk
 fastapi
+starlette

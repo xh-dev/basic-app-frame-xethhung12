@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Request
-from startle.types import ASGIApp
+from starlette.types import ASGIApp
 
 
 class DarkHoleMiddleware:
