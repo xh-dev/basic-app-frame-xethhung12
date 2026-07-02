@@ -4,3 +4,5 @@ pymongo[srv]
 mysql-connector-python
 rstream
 blessed
+dropbox
+xai-sdk
