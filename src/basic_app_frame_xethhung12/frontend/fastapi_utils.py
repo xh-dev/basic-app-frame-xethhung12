@@ -18,7 +18,7 @@ class DarkHoleMiddleware:
     
     @staticmethod
     def default_apikey_handler(request: Request, expected_key: str):
-        key = request.get("X-Dark-Host-Key")
+        key = request.get("X-Dark-Hole-Key")
         if not key or key != expected_key:
             return False
         else:
