@@ -6,3 +6,4 @@ rstream
 blessed
 dropbox
 xai-sdk
+fastapi
