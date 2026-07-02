@@ -2,3 +2,5 @@ j-vault-http-client-xethhung12 >= 0.1.1
 simple-crypt-xethhung12>=0.0.4
 pymongo[srv]
 mysql-connector-python
+rstream
+blessed
